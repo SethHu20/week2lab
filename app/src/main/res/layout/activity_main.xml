@@ -11,7 +11,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:background="#5C4658"
@@ -26,354 +26,576 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content">
 
-            <TableLayout
-                android:id="@+id/tableLayout"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/titleView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:text="Title"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/titleInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:singleLine="false"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintBaseline_toBaselineOf="@+id/titleView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline3" />
+
+            <EditText
+                android:id="@+id/yearInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintEnd_toEndOf="@+id/titleInput"
+                app:layout_constraintStart_toStartOf="@+id/titleInput"
+                app:layout_constraintTop_toBottomOf="@+id/titleInput" />
+
+            <TextView
+                android:id="@+id/yearView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Year"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/yearInput"
+                app:layout_constraintEnd_toEndOf="@+id/titleView" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="116dp" />
+
+            <TextView
+                android:id="@+id/countryView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Country"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/countryInput"
+                app:layout_constraintEnd_toEndOf="@+id/yearView" />
+
+            <EditText
+                android:id="@+id/countryInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintEnd_toEndOf="@+id/yearInput"
+                app:layout_constraintStart_toStartOf="@+id/yearInput"
+                app:layout_constraintTop_toBottomOf="@+id/yearInput" />
+
+            <TextView
+                android:id="@+id/genreView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Genre"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/genreInput"
+                app:layout_constraintEnd_toEndOf="@+id/countryView" />
+
+            <EditText
+                android:id="@+id/genreInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintEnd_toEndOf="@+id/countryInput"
+                app:layout_constraintStart_toStartOf="@+id/countryInput"
+                app:layout_constraintTop_toBottomOf="@+id/countryInput" />
+
+            <TextView
+                android:id="@+id/costView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Cost"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/costInput"
+                app:layout_constraintEnd_toEndOf="@+id/genreView" />
+
+            <EditText
+                android:id="@+id/costInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintEnd_toEndOf="@+id/genreInput"
+                app:layout_constraintStart_toStartOf="@+id/genreInput"
+                app:layout_constraintTop_toBottomOf="@+id/genreInput" />
+
+            <TextView
+                android:id="@+id/keywordsView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Keywords"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/keywordsInput"
+                app:layout_constraintEnd_toEndOf="@+id/costView" />
+
+            <EditText
+                android:id="@+id/keywordsInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintEnd_toEndOf="@+id/costInput"
+                app:layout_constraintStart_toStartOf="@+id/costInput"
+                app:layout_constraintTop_toBottomOf="@+id/costInput" />
+
+            <TextView
+                android:id="@+id/actorsView"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Actors"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/actorsInput"
+                app:layout_constraintEnd_toEndOf="@+id/keywordsView" />
+
+            <EditText
+                android:id="@+id/actorsInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/white"
+                android:ems="10"
+                android:inputType="number"
+                android:minHeight="48dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/hintColor"
+                app:layout_constraintEnd_toEndOf="@+id/keywordsInput"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/keywordsInput"
+                app:layout_constraintTop_toBottomOf="@+id/keywordsInput" />
+
+            <Button
+                android:id="@+id/infoButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="24dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#8AD1FF"
+                android:onClick="movieInfo"
+                android:text="Movie info"
+                android:textColor="#604358"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/actorsView" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/titleRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:backgroundTint="@color/white"
+                android:onClick="addMovie"
+                android:text="Add movie"
+                android:textColor="#604358"
+                app:layout_constraintStart_toEndOf="@+id/infoButton"
+                app:layout_constraintTop_toTopOf="@+id/infoButton" />
 
-                    <TextView
-                        android:id="@+id/titleView"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:text="Title"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_weight=".3"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+            <Button
+                android:id="@+id/doubleCostButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:backgroundTint="#74D2FF"
+                android:onClick="doubleCost"
+                android:text="Double Cost"
+                android:textColor="#604358"
+                app:layout_constraintStart_toEndOf="@+id/clearButton"
+                app:layout_constraintTop_toTopOf="@+id/clearButton" />
 
-                    <EditText
-                        android:id="@+id/titleInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:backgroundTint="@color/white"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        android:singleLine="false"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/hintColor"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/titleView"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_weight=".7"
-                        app:layout_constraintStart_toEndOf="@+id/titleView" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#FF8C8C"
+                android:onClick="clearInfo"
+                android:text="Clear info"
+                android:textColor="#604358"
+                app:layout_constraintStart_toStartOf="@+id/infoButton"
+                app:layout_constraintTop_toBottomOf="@+id/infoButton" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/yearRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/clearSharedPreferences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#FF8C8C"
+                android:onClick="clearSharedPreferences"
+                android:text="Clear SharedPref"
+                android:textColor="#604358"
+                app:layout_constraintStart_toStartOf="@+id/clearButton"
+                app:layout_constraintTop_toBottomOf="@+id/clearButton" />
 
-                    <TextView
-                        android:id="@+id/yearView"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:text="Year"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_weight=".3"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
+            <Button
+                android:id="@+id/loadSharedPreferences"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="@color/white"
+                android:onClick="loadSharedPreferences"
+                android:text="Load SharedPref"
+                android:textColor="#604358"
+                app:layout_constraintStart_toStartOf="@+id/saveSharedPreferences"
+                app:layout_constraintTop_toBottomOf="@+id/saveSharedPreferences" />
 
-                    <EditText
-                        android:id="@+id/yearInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:backgroundTint="@color/white"
-                        android:ems="10"
-                        android:inputType="number"
-                        android:minHeight="48dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/hintColor"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_weight=".7"
-                        app:layout_constraintStart_toEndOf="@+id/yearView"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/saveSharedPreferences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:backgroundTint="#74D2FF"
+                android:onClick="saveSharedPreferences"
+                android:text="Save SharedPref"
+                android:textColor="#604358"
+                app:layout_constraintStart_toStartOf="@+id/clearSharedPreferences"
+                app:layout_constraintTop_toBottomOf="@+id/clearSharedPreferences" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/countryRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/countryView"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:text="Country"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_weight=".3"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <EditText
-                        android:id="@+id/countryInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:backgroundTint="@color/white"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/hintColor"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_weight=".7"
-                        app:layout_constraintStart_toEndOf="@+id/countryView"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/genreRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/genreView"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:text="Genre"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_weight=".3"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <EditText
-                        android:id="@+id/genreInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:backgroundTint="@color/white"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/hintColor"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_weight=".7"
-                        app:layout_constraintStart_toEndOf="@+id/genreView"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/costRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/costView"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:text="Cost"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_weight=".3"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <EditText
-                        android:id="@+id/costInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:backgroundTint="@color/white"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/hintColor"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_weight=".7"
-                        app:layout_constraintStart_toEndOf="@+id/costView"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/keywordsRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/keywordsView"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:text="Keywords"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_weight=".3"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <EditText
-                        android:id="@+id/keywordsInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:backgroundTint="@color/white"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:minHeight="48dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/hintColor"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_weight=".7"
-                        app:layout_constraintStart_toEndOf="@+id/keywordsView"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/actorsRow"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#3CFFFFFF">
-
-                    <TextView
-                        android:id="@+id/actorsView"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="16dp"
-                        android:text="Actors"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintHorizontal_weight=".3"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="1.0" />
-
-                    <EditText
-                        android:id="@+id/actorsInput"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:backgroundTint="@color/white"
-                        android:ems="10"
-                        android:inputType="number"
-                        android:minHeight="48dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/hintColor"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_weight=".7"
-                        app:layout_constraintStart_toEndOf="@+id/actorsView"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </TableLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:id="@+id/infoButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="60dp"
-                    android:layout_marginTop="16dp"
-                    android:backgroundTint="#8AD1FF"
-                    android:onClick="movieInfo"
-                    android:text="Movie info"
-                    android:textColor="#604358"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/addButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="60dp"
-                    android:backgroundTint="@color/white"
-                    android:onClick="addMovie"
-                    android:text="Add movie"
-                    android:textColor="#604358"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/infoButton" />
-
-                <Button
-                    android:id="@+id/clearButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:backgroundTint="#FF8C8C"
-                    android:onClick="clearInfo"
-                    android:text="Clear info"
-                    android:textColor="#604358"
-                    app:layout_constraintLeft_toLeftOf="@+id/infoButton"
-                    app:layout_constraintTop_toBottomOf="@+id/infoButton" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <!--    <TextView-->
+<!--        android:id="@+id/titleView"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="24dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:text="Title"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline3"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/titleInput"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginEnd="24dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:singleLine="false"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/hintColor"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/titleView"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline3" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/yearInput"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="number"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/hintColor"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/titleInput"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/titleInput"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/titleInput" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/yearView"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Year"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/yearInput"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/titleView" />-->
+
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideline3"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_begin="116dp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/countryView"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Country"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/countryInput"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/yearView" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/countryInput"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/hintColor"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/yearInput"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/yearInput"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/yearInput" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/genreView"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Genre"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/genreInput"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/countryView" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/genreInput"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/hintColor"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/countryInput"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/countryInput"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/countryInput" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/costView"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Cost"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/costInput"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/genreView" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/costInput"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="number"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/hintColor"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/genreInput"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/genreInput"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/genreInput" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/keywordsView"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Keywords"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/keywordsInput"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/costView" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/keywordsInput"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/hintColor"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/costInput"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/costInput"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/costInput" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/actorsView"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Actors"-->
+<!--        android:textAlignment="textEnd"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBaseline_toBaselineOf="@+id/actorsInput"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/keywordsView" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/actorsInput"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="number"-->
+<!--        android:minHeight="48dp"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textColorHint="@color/hintColor"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/keywordsInput"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/keywordsInput"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/keywordsInput" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/infoButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:backgroundTint="#8AD1FF"-->
+<!--        android:onClick="movieInfo"-->
+<!--        android:text="Movie info"-->
+<!--        android:textColor="#604358"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/actorsView" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/addButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:onClick="addMovie"-->
+<!--        android:text="Add movie"-->
+<!--        android:textColor="#604358"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/infoButton"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/infoButton" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/doubleCostButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:backgroundTint="#74D2FF"-->
+<!--        android:onClick="doubleCost"-->
+<!--        android:text="Double Cost"-->
+<!--        android:textColor="#604358"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/clearButton"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/clearButton" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/clearButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="#FF8C8C"-->
+<!--        android:onClick="clearInfo"-->
+<!--        android:text="Clear info"-->
+<!--        android:textColor="#604358"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/infoButton"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/infoButton" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/clearSharedPreferences"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="#FF8C8C"-->
+<!--        android:onClick="clearSharedPreferences"-->
+<!--        android:text="Clear SharedPref"-->
+<!--        android:textColor="#604358"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/clearButton"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/clearButton" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/loadSharedPreferences"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:onClick="loadSharedPreferences"-->
+<!--        android:text="Load SharedPref"-->
+<!--        android:textColor="#604358"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/saveSharedPreferences"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/saveSharedPreferences" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/saveSharedPreferences"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:backgroundTint="#74D2FF"-->
+<!--        android:onClick="saveSharedPreferences"-->
+<!--        android:text="Save SharedPref"-->
+<!--        android:textColor="#604358"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/clearSharedPreferences"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/clearSharedPreferences" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
