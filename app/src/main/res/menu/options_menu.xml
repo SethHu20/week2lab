@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/option_clear_field" android:title="Clear Field" />
+    <item android:id="@+id/option_lower_case" android:title="Change lower case" />
+    <item android:id="@+id/option_update_adapter" android:title="Update Adapter" />
+    <item android:id="@+id/option_clear_preferences" android:title="Clear Preferences" />
+</menu>
